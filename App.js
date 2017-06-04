@@ -23,7 +23,7 @@ class Donate extends React.Component {
 const Watch = () => {
   return(
     <View style={styles.container}>
-      <Text>Watch Live</Text>
+      <Text>on new branch</Text>
 
       </View>
   )
