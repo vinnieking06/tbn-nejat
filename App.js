@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View,Button, TextInput, TouchableOpacity, WebView, Image } from 'react-native';
 import { TabNavigator, StackNavigator, withNavigation } from "react-navigation";
 import About from './About';
+import Youtube from './Youtube'
 
 export default class App extends React.Component {
   render() {
@@ -13,7 +14,7 @@ class Donate extends React.Component {
   render() {
     return (
       <WebView
-        source={{uri: 'https://rezasafa.com/donate/'}}
+        source={{uri:'https://rezasafa.com/donate_mobile/'}}
         style={styles.donate} 
       />
     );
@@ -28,30 +29,6 @@ const Watch = () => {
       </View>
   )
 }
-
-
-class Youtube extends React.Component {
-  static navigationOptions = {
-    tabBarLabel: 'Youtube',
-    // Note: By default the icon is only shown on iOS. Search the showIcon option below.
-    tabBarIcon: ({ tintColor }) => (
-      <Image
-        source={require('./youtube.png')}
-        style={[styles.icon, {tintColor: tintColor}]}
-      />
-    ),
-  };
-  render() {
-    return (
-        <WebView
-        style={{flex:1}}
-        javaScriptEnabled={true}
-        source={{uri: 'https://www.youtube.com/embed/ZZ5LpwO-An4?rel=0&autoplay=0&showinfo=0&controls=0'}}
-        />
-    );
-  }
-}
-
 
 const Contact = () => {
   return(

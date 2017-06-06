@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View,Button, TextInput, TouchableOpacity, WebView, Image } from 'react-native';
+import { StyleSheet, Text, View,Button, TextInput, TouchableOpacity, WebView, Image, Icon } from 'react-native';
 import { TabNavigator, StackNavigator, withNavigation } from "react-navigation";
 
  class HomeScreen extends React.Component {
@@ -39,7 +39,7 @@ import { TabNavigator, StackNavigator, withNavigation } from "react-navigation";
 
 class Broadcaster extends React.Component {
   static navigationOptions = {
-    title: 'BroadCaster',
+    title: 'BroadCaster'
   };
   render() {
     return (
@@ -112,7 +112,7 @@ const About = StackNavigator({
   Testimonies: {screen: Testimonies},
   Satellite: {screen: Satellite},
   Founder: {screen: Founder}
-});
+},{headerMode: 'screen'});
 
 export default About;
 
