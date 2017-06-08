@@ -7,11 +7,11 @@ const Video = (props) => {
     console.log(props)
        return (
            <View style={{flex:1}}>
-                    <TouchableOpacity onPress={props.back}>
+                    <TouchableOpacity style={{marginTop: 10}} onPress={props.back}>
                         <Text>back</Text>
                     </TouchableOpacity>
            <WebView
-                style={{flex:1}}
+                style={{flex:1, marginTop: 10}}
                 javaScriptEnabled={true}
                 source={{uri: props.vid}}
             />
@@ -23,15 +23,14 @@ const Youtube = (props) => {
         const data = props.video;
         return (
             <View style={styles.video}>
-                <Text>
-                    Title: {data.title}
-                    Description: {data.shortDescription}
-                    Length: {data.duration}
-                    </Text>
-                    <TouchableOpacity onPress={function(){props.videoView(data.url)}}>
-                        <Image style={styles.thumbnail} source={{uri: data.thumbnail }} />
-                    </TouchableOpacity>
-
+                <TouchableOpacity onPress={function(){props.videoView(data.url)}}>
+                    <Image style={styles.thumbnail} source={{uri: data.thumbnail }} />
+                </TouchableOpacity>
+                <View style={{flex:1}}>
+                    <Text style={{fontSize: 9, fontWeight: 'bold'}}>{data.title}</Text>
+                    <Text style={{fontSize: 8}}>{data.shortDescription}</Text>
+                    <Text style={{fontSize: 8}}>Length: {data.duration}</Text>
+                </View>
             </ View>
         );
   } 
@@ -71,7 +70,7 @@ export default class YoutubeContainer extends React.Component {
 
     if (!this.state.videoView){
         return (
-            <ScrollView >
+            <ScrollView contentContainerStyle={{flexDirection:'column', flex:1, justifyContent:'space-between', marginLeft:10, marginRight:10 }} >
             {videoComponents}
             </ScrollView>
         );
@@ -87,9 +86,8 @@ export default class YoutubeContainer extends React.Component {
 const styles = StyleSheet.create({
     video: {
         flex: 1,
-        borderWidth: 2,
-        borderColor: '#00ff00',
-
+        flexDirection: 'row',
+        marginTop: 20
     },
     icon: {
         flex: 1,
