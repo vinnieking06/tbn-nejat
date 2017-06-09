@@ -4,6 +4,7 @@ import { TabNavigator, StackNavigator, withNavigation } from "react-navigation";
 import About from './About';
 import Youtube from './Youtube';
 import Contact from './Contact';
+import Watch from './Watch'
 
 class Donate extends React.Component {
   render() {
@@ -14,15 +15,6 @@ class Donate extends React.Component {
       />
     );
   }
-}
-
-const Watch = () => {
-  return(
-    <View style={styles.container}>
-      <Text>on new branch</Text>
-
-      </View>
-  )
 }
 
  const Tabs = TabNavigator({
