@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View,Button, TextInput, TouchableOpacity, WebView, Image } from 'react-native';
 
-
 class Watch extends React.Component {
     
     handlePress(){
