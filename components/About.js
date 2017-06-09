@@ -16,31 +16,31 @@ import {Broadcaster, Schedule, Testimonies, Founder, Satellite} from './aboutSub
         
         <TouchableOpacity onPress={() => navigate('Broadcaster')}>
           <View style={styles.button}>
-            <Text>Broadcasters</Text>
+            <Text style={styles.text}>Broadcasters</Text>
             </View>
           </TouchableOpacity>
 
         <TouchableOpacity onPress={() => navigate('Schedule')}>
           <View style={styles.button}>
-            <Text>Schedule</Text>
+            <Text style={styles.text}>Schedule</Text>
             </View>
           </TouchableOpacity>
 
         <TouchableOpacity onPress={() => navigate('Testimonies')}>
           <View style={styles.button}>
-            <Text>Testimonies</Text>
+            <Text style={styles.text}>Testimonies</Text>
             </View>
           </TouchableOpacity>
 
         <TouchableOpacity onPress={() => navigate('Founder')}>
           <View style={styles.button}>
-            <Text>Founder Info</Text>
+            <Text style={styles.text}>Founder Info</Text>
             </View>
           </TouchableOpacity>
 
         <TouchableOpacity onPress={() => navigate('Satellite')}>
           <View style={styles.button}>
-            <Text>Satellite</Text>
+            <Text style={styles.text}>Satellite</Text>
             </View>
           </TouchableOpacity>
 
@@ -61,8 +61,6 @@ const About = StackNavigator({
 headerTintColor: 'black', headerBackTitle: null, headerStyle: {backgroundColor: null, borderBottomWidth: 0}
 }});
 
-export default About;
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -72,8 +70,16 @@ const styles = StyleSheet.create({
   
   },
   button: {
-    alignItems: 'center',
+    alignItems: 'flex-start',
     justifyContent: 'center',
-    height: 91
+    height: 91,
+    borderWidth: 0.5
+    
+  },
+  text: {
+    marginLeft: 10
   }
 })
+
+export default About;
+
