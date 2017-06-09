@@ -2,7 +2,8 @@ import React from 'react';
 import { StyleSheet, Text, View,Button, TextInput, TouchableOpacity, WebView, Image } from 'react-native';
 import { TabNavigator, StackNavigator, withNavigation } from "react-navigation";
 import About from './About';
-import Youtube from './Youtube'
+import Youtube from './Youtube';
+import Contact from './Contact';
 
 export default class App extends React.Component {
   render() {
@@ -30,15 +31,6 @@ const Watch = () => {
   )
 }
 
-const Contact = () => {
-  return(
-    <View style={styles.container}>
-      <Text>contact us here</Text>
-
-      </View>
-  )
-}
-
  const Tabs = TabNavigator({
   About: {
     screen: About,
@@ -60,7 +52,8 @@ const Contact = () => {
       style: {
         backgroundColor: 'white'
       }
-    }
+    },
+    initialRouteName: 'Watch'
   });
 
 const styles = StyleSheet.create({

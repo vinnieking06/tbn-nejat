@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View,Button, TextInput, TouchableOpacity, WebView, Image, ScrollView } from 'react-native';
 import { TabNavigator, StackNavigator, withNavigation } from "react-navigation";
 import Data from './YoutubeData';
+const youTubeIcon = require('./assets/youtube.png')
 
 const Video = (props) => {
     console.log(props)
@@ -41,7 +42,7 @@ export default class YoutubeContainer extends React.Component {
     // Note: By default the icon is only shown on iOS. Search the showIcon option below.
     tabBarIcon: ({ tintColor }) => (
       <Image
-        source={require('./youtube.png')}
+        source={youTubeIcon}
         style={[styles.icon, {tintColor: tintColor}]}
       />
     ),
@@ -79,7 +80,6 @@ export default class YoutubeContainer extends React.Component {
             <Video back={this.videoView} vid={this.state.videoUrl} />
         )
     }
-
   }
 }
 

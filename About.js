@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View,Button, TextInput, TouchableOpacity, WebView, Image, Icon } from 'react-native';
-import { TabNavigator, StackNavigator, withNavigation } from "react-navigation";
+import { TabNavigator, StackNavigator, withNavigation, navigation } from "react-navigation";
 
  class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -43,7 +43,7 @@ class Broadcaster extends React.Component {
   };
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         <Text>Something about Broadcasting</Text>
       </View>
     );
@@ -106,13 +106,15 @@ class Founder extends React.Component {
 
 
 const About = StackNavigator({
-  Home: { screen: HomeScreen },
+  Home: { screen: HomeScreen},
   Broadcaster: { screen: Broadcaster },
   Schedule: {screen: Schedule},
   Testimonies: {screen: Testimonies},
   Satellite: {screen: Satellite},
   Founder: {screen: Founder}
-},{headerMode: 'screen'});
+},{headerMode: 'screen', navigationOptions: {
+headerTintColor: 'black', headerBackTitle: null, headerStyle: {backgroundColor: null}
+}});
 
 export default About;
 
