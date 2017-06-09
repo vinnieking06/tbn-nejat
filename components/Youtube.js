@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View,Button, TextInput, TouchableOpacity, WebView, Image, ScrollView } from 'react-native';
 import { TabNavigator, StackNavigator, withNavigation } from "react-navigation";
-import Data from './YoutubeData';
-const youTubeIcon = require('./assets/youtube.png')
+import Data from './../assets/YoutubeData';
+const youTubeIcon = require('./../assets/youtube.png')
 
 const Video = (props) => {
     console.log(props)
