@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View,Button, TextInput, TouchableOpacity, WebView, Image, ScrollView } from 'react-native';
-import { TabNavigator, StackNavigator, withNavigation } from "react-navigation";
+import { TabNavigator, StackNavigator, withNavigation, navigation } from "react-navigation";
 import Data from './../assets/YoutubeData';
 const youTubeIcon = require('./../assets/youtube.png')
 
@@ -20,23 +20,28 @@ const Video = (props) => {
        )
 }
 
-const Youtube = (props) => {
-        const data = props.video;
-        return (
-            <View style={styles.video}>
-                <TouchableOpacity onPress={function(){props.videoView(data.url)}}>
-                    <Image style={styles.thumbnail} source={{uri: data.thumbnail }} />
-                </TouchableOpacity>
-                <View style={{flex:1}}>
-                    <Text style={{fontSize: 9, fontWeight: 'bold'}}>{data.title}</Text>
-                    <Text style={{fontSize: 8}}>{data.shortDescription}</Text>
-                    <Text style={{fontSize: 8}}>Length: {data.duration}</Text>
-                </View>
-            </ View>
-        );
+class Youtube extends React.Component {
+        render(){
+            const data = this.props.video;
+            //const { navigate } = this.props.navigation;
+            return (
+                <View style={styles.video}>
+                    <TouchableOpacity onPress={() => navigate('Youtube', {video: props.url})}>
+                        <Image style={styles.thumbnail} source={{uri: data.thumbnail }} />
+                    </TouchableOpacity>
+                    <View style={{flex:1}}>
+                        <Text style={{fontSize: 9, fontWeight: 'bold'}}>{data.title}</Text>
+                        <Text style={{fontSize: 8}}>{data.shortDescription}</Text>
+                        <Text style={{fontSize: 8}}>Length: {data.duration}</Text>
+                    </View>
+                </ View>
+            );
+
+        }
+
   } 
 
-export default class YoutubeContainer extends React.Component {
+class YoutubeContainer extends React.Component {
   static navigationOptions = {
     tabBarLabel: 'Youtube',
     // Note: By default the icon is only shown on iOS. Search the showIcon option below.
@@ -69,19 +74,31 @@ export default class YoutubeContainer extends React.Component {
         videoComponents.push(<Youtube videoView={this.videoView} key={i} video={data[i]} />)
     }
 
-    if (!this.state.videoView){
+   // if (!this.state.videoView){
         return (
             <ScrollView contentContainerStyle={{flexDirection:'column', flex:1, justifyContent:'space-between', marginLeft:10, marginRight:10 }} >
             {videoComponents}
             </ScrollView>
         );
-    } else {
-        return (
-            <Video back={this.videoView} vid={this.state.videoUrl} />
-        )
-    }
+   // } 
+    
+    // else {
+    //     return (
+    //         <Video back={this.videoView} vid={this.state.videoUrl} />
+    //     )
+    // }
   }
 }
+
+const YoutubeRouter = StackNavigator({
+  List: { screen: YoutubeContainer},
+  Video: {screen: Video}
+  
+},{headerMode: 'screen', navigationOptions: {
+headerTintColor: 'black', headerBackTitle: null, headerStyle: {backgroundColor: null, borderBottomWidth: 0}
+}});
+
+export default YoutubeContainer
 
 const styles = StyleSheet.create({
     video: {
