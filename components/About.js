@@ -1,7 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View,Button, TextInput, TouchableOpacity, WebView, Image, Icon } from 'react-native';
 import { TabNavigator, StackNavigator, withNavigation, navigation } from "react-navigation";
-import {Broadcaster, Schedule, Testimonies, Founder, Satellite} from './aboutSubNavs.js'; 
+import { Schedule, Testimonies, Founder, Satellite} from './aboutSubNavs.js'; 
+import Broadcaster from './Broadcasters';
 
 
  class HomeScreen extends React.Component {

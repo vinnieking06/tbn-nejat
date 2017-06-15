@@ -1,20 +1,20 @@
 import React from 'react';
-import { StyleSheet, Text, View,Button, TextInput, TouchableOpacity, WebView, Image, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, TouchableOpacity, WebView, Image, ScrollView, Dimensions } from 'react-native';
 import { TabNavigator, StackNavigator, withNavigation, navigation } from "react-navigation";
 import Data from './../assets/YoutubeData';
 const youTubeIcon = require('./../assets/youtube.png');
+import Video from 'react-native-video';
 
-class Video extends React.Component {
+class Mideo extends React.Component {
 
+    componentDidMount(){
+        this.videoRef.presentFullscreenPlayer()
+    }
     render() {
        return (
-           <View style={{flex:1}}>
-           <WebView
-                style={{flex:1, marginTop: 10}}
-                javaScriptEnabled={true}
-                source={{uri: this.props.navigation.state.params.video }}
-            />
-            </View>
+
+            <Video style={styles.backgroundVideo} ref={ref => this.videoRef = ref} source={{uri: "https://player.vimeo.com/external/210669689.hd.mp4?s=4316aec92a87ee86a734f0e134ad6ba161549cba&profile_id=119"}} />
+
        ) 
     }
 
@@ -78,7 +78,7 @@ class YoutubeContainer extends React.Component {
 
 const YoutubeRouter = StackNavigator({
   List: { screen: YoutubeContainer},
-  Video: {screen: Video}
+  Video: {screen: Mideo}
 },{headerMode: 'screen', navigationOptions: {
 headerTintColor: 'black', headerBackTitle: null, headerStyle: {backgroundColor: null, borderBottomWidth: 0}
 }});
@@ -96,7 +96,10 @@ const styles = StyleSheet.create({
     thumbnail: {
         width: 100,
         height: 100,
-  }
+  },
+    backgroundVideo: {
+
+  },
 })
 
 export default YoutubeRouter
