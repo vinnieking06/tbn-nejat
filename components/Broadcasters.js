@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View,Button, TextInput, TouchableOpacity, WebView, Image, Icon, ScrollView } from 'react-native';
 import { TabNavigator, StackNavigator, withNavigation, navigation } from "react-navigation";
 import Data from './../assets/BroadcastData';
-import { NavigationActions } from 'react-navigation'
+
 
 export class BroadcasterContainer extends React.Component {
   static navigationOptions = {
@@ -29,7 +29,7 @@ export class BroadcasterContainer extends React.Component {
 
   componentDidMount(){
     Data.forEach((item, index) => {
-      item.open = item.open;
+      item.open = false;
       item.index = index;
     });
     this.setState({programs: Data})

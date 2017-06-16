@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View,Button, TextInput, TouchableOpacity, WebView, Image, Icon } from 'react-native';
 import { TabNavigator, StackNavigator, withNavigation, navigation } from "react-navigation";
-import { Schedule, Testimonies, Founder, Satellite} from './aboutSubNavs.js'; 
+import { Schedule, Founder, Satellite} from './aboutSubNavs.js'; 
 import {BroadcasterContainer, BroadcasterInfo} from './Broadcasters';
-
+import {TestimoniesContainer} from './Testimonies';
 
  class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -50,17 +50,16 @@ import {BroadcasterContainer, BroadcasterInfo} from './Broadcasters';
   }
 }
 
-
 const About = StackNavigator({
   Home: { screen: HomeScreen},
   Broadcaster: { screen: BroadcasterContainer },
   Schedule: {screen: Schedule},
-  Testimonies: {screen: Testimonies},
+  Testimonies: {screen: TestimoniesContainer},
   Satellite: {screen: Satellite},
   Founder: {screen: Founder},
   BroadcasterInfo: {screen: BroadcasterInfo}
 },{headerMode: 'screen', navigationOptions: {
-headerTintColor: 'black', headerBackTitle: null, headerStyle: {backgroundColor: null, borderBottomWidth: 0}
+    headerTintColor: 'black', headerBackTitle: null, headerStyle: {backgroundColor: null, borderBottomWidth: 0}
 }});
 
 const styles = StyleSheet.create({
@@ -74,8 +73,8 @@ const styles = StyleSheet.create({
   button: {
     alignItems: 'flex-start',
     justifyContent: 'center',
-    height: 91,
-    borderWidth: 0.5
+    height: 112,
+    backgroundColor: 'white'
     
   },
   text: {
