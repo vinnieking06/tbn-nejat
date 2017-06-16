@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View,Button, TextInput, TouchableOpacity, WebView, Image, Icon } from 'react-native';
 import { TabNavigator, StackNavigator, withNavigation, navigation } from "react-navigation";
 import { Schedule, Testimonies, Founder, Satellite} from './aboutSubNavs.js'; 
-import Broadcaster from './Broadcasters';
+import {BroadcasterContainer, BroadcasterInfo} from './Broadcasters';
 
 
  class HomeScreen extends React.Component {
@@ -53,11 +53,12 @@ import Broadcaster from './Broadcasters';
 
 const About = StackNavigator({
   Home: { screen: HomeScreen},
-  Broadcaster: { screen: Broadcaster },
+  Broadcaster: { screen: BroadcasterContainer },
   Schedule: {screen: Schedule},
   Testimonies: {screen: Testimonies},
   Satellite: {screen: Satellite},
-  Founder: {screen: Founder}
+  Founder: {screen: Founder},
+  BroadcasterInfo: {screen: BroadcasterInfo}
 },{headerMode: 'screen', navigationOptions: {
 headerTintColor: 'black', headerBackTitle: null, headerStyle: {backgroundColor: null, borderBottomWidth: 0}
 }});

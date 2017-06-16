@@ -2,8 +2,9 @@ import React from 'react';
 import { StyleSheet, Text, View,Button, TextInput, TouchableOpacity, WebView, Image, Icon, ScrollView } from 'react-native';
 import { TabNavigator, StackNavigator, withNavigation, navigation } from "react-navigation";
 import Data from './../assets/BroadcastData';
+import { NavigationActions } from 'react-navigation'
 
-export default class BroadcasterContainer extends React.Component {
+export class BroadcasterContainer extends React.Component {
   static navigationOptions = {
     title: 'Broadcasters'
   };
@@ -23,7 +24,6 @@ export default class BroadcasterContainer extends React.Component {
         item.open = false;
       }
     });
-    console.log(newState)
     this.setState({programs: newState})
   }
 
@@ -32,16 +32,14 @@ export default class BroadcasterContainer extends React.Component {
       item.open = item.open;
       item.index = index;
     });
-    console.log("this.state", this.state)
     this.setState({programs: Data})
   }
   
-
   render() {
     return (
       <ScrollView ContentContainerStyle={styles.container}>
         {this.state.programs.map((program, index)=>{
-          return < Program toggleProgram={this.toggleProgram} open={program.open} key={index} program={program} />
+          return < Program navigation={this.props.navigation} toggleProgram={this.toggleProgram} open={program.open} key={index} program={program} />
         })}
       </ScrollView>
     );
@@ -51,7 +49,7 @@ export default class BroadcasterContainer extends React.Component {
 class Program extends React.Component {
   open(open, program){
     if (open) {
-      return <OpenProgram program={program} />
+      return <OpenProgram navigation={this.props.navigation} program={program} />
     }
     else {
       return null
@@ -69,20 +67,33 @@ class Program extends React.Component {
           </View>
           {this.open(props.program.open, props.program)}
         </View>
-  )
+      )
 
   }
 
 }
 
-const OpenProgram = props => {
+class OpenProgram extends React.Component {
+  render(){
+    const props = this.props
+    return (
+        <View style={{flex:1, flexDirection: 'column'}}>
+          <Text>{props.program.ministry}</Text>
+          <Text>{props.program.days}</Text>
+          <Text>{props.program.time}</Text>
+          <Button title="More info" onPress={()=>{props.navigation.navigate('BroadcasterInfo', {info: props.program.info})}} />
+        </View>
+      )
+  }
+  
+}
+
+export const BroadcasterInfo = (props) => {
+ const info = props.navigation.state.params.info;
   return (
-    <View style={{flex:1, flexDirection: 'column'}}>
-      <Text>{props.program.ministry}</Text>
-      <Text>{props.program.days}</Text>
-      <Text>{props.program.time}</Text>
-      <Button onPress={()=>{console.log("Hello")}} title="More info" />
-    </View>
+    <View>
+      <Text>{info}</Text>
+      </View>
   )
 }
 
