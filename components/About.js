@@ -3,7 +3,7 @@ import { StyleSheet, Text, View,Button, TextInput, TouchableOpacity, WebView, Im
 import { TabNavigator, StackNavigator, withNavigation, navigation } from "react-navigation";
 import { Schedule, Founder, Satellite} from './aboutSubNavs.js'; 
 import {BroadcasterContainer, BroadcasterInfo} from './Broadcasters';
-import {TestimoniesContainer} from './Testimonies';
+import {TestimoniesContainer, TestimonyInfo} from './Testimonies';
 
  class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -57,7 +57,8 @@ const About = StackNavigator({
   Testimonies: {screen: TestimoniesContainer},
   Satellite: {screen: Satellite},
   Founder: {screen: Founder},
-  BroadcasterInfo: {screen: BroadcasterInfo}
+  BroadcasterInfo: {screen: BroadcasterInfo},
+  TestimonyInfo: {screen: TestimonyInfo}
 },{headerMode: 'screen', navigationOptions: {
     headerTintColor: 'black', headerBackTitle: null, headerStyle: {backgroundColor: null, borderBottomWidth: 0}
 }});
