@@ -15,32 +15,6 @@ export class Schedule extends React.Component {
   }
 }
 
-export class Testimonies extends React.Component {
-  static navigationOptions = {
-    title: 'Testimonies',
-  };
-  render() {
-    return (
-      <View>
-        <Text>Something about Testimonies</Text>
-      </View>
-    );
-  }
-}
-
-export class Satellite extends React.Component {
-  static navigationOptions = {
-    title: 'Satellite Coverage',
-  };
-  render() {
-    return (
-      <View>
-        <Text>Something about Satellite</Text>
-      </View>
-    );
-  }
-}
-
 export class Founder extends React.Component {
   static navigationOptions = {
     title: 'Founder Info',

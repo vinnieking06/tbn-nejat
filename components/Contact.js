@@ -7,7 +7,6 @@ const Contact = () => {
         <Text>www.nejattv.org</Text>
         <Text>amen@nejattv.org</Text>
         <Text>social media icons</Text>
-
       </View>
   )
 }

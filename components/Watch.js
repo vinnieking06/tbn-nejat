@@ -9,17 +9,11 @@ class Watch extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <View style={styles.buttons}>
                     <View style={styles.section}>
                         <Button onPress={this.handlePress} title="Watch"/>
-                        <Text>High Speed</Text>
+                        <Text>Watch Now</Text>
+                        <Text>Click here</Text>
                     </View>
-                    <View style={styles.section}>
-                        <Button onPress={this.handlePress} title="Watch"/>
-                        <Text>Low Speed</Text>
-                    </View>
-                </View>
-
             </View>
         )
     }

@@ -12,12 +12,9 @@ class Mideo extends React.Component {
     }
     render() {
        return (
-
             <Video style={styles.backgroundVideo} ref={ref => this.videoRef = ref} source={{uri: "https://player.vimeo.com/external/210669689.hd.mp4?s=4316aec92a87ee86a734f0e134ad6ba161549cba&profile_id=119"}} />
-
        ) 
     }
-
 }
 
 class Youtube extends React.Component {
