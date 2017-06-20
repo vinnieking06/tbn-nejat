@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View,Button, TextInput, TouchableOpacity, WebView, Image, Icon, ScrollView } from 'react-native';
 import { TabNavigator, StackNavigator, withNavigation, navigation } from "react-navigation";
-import Data from './../assets/BroadcastData';
+import Data from './../../assets/BroadcastData';
 
 
 export class BroadcasterContainer extends React.Component {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View,Button, TextInput, TouchableOpacity, WebView, Image } from 'react-native';
 import { TabNavigator, StackNavigator, withNavigation } from "react-navigation";
-import About from './About';
+import About from './about/About';
 import Youtube from './Youtube';
 import Contact from './Contact';
 import Watch from './Watch'

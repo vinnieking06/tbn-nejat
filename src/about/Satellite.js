@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View,Button, TextInput, TouchableOpacity, WebView, Image, Icon, ScrollView, FlatList } from 'react-native';
 import { TabNavigator, StackNavigator, withNavigation, navigation } from "react-navigation";
-import Data from './../assets/satelliteData';
+import Data from './../../assets/satelliteData';
 
 export default class SatelliteContainer extends React.Component {
   static navigationOptions = {

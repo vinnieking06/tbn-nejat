@@ -1,10 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View,Button, TextInput, TouchableOpacity, WebView, Image, Icon } from 'react-native';
 import { TabNavigator, StackNavigator, withNavigation, navigation } from "react-navigation";
-import { Schedule, Founder} from './aboutSubNavs.js'; 
 import {BroadcasterContainer, BroadcasterInfo} from './Broadcasters';
 import {TestimoniesContainer, TestimonyInfo} from './Testimonies';
 import Satellite from './Satellite';
+import Schedule from './Schedule';
+import Founder from './Founder';
+
 
  class HomeScreen extends React.Component {
   static navigationOptions = {
