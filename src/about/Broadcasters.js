@@ -63,7 +63,7 @@ class Program extends React.Component {
       return (
         <View style={styles.item} >
 
-         <View style={{}}>
+         <View>
            <Image style={{flex: 1, width: 50, borderRadius: 25}} source={{uri: "https://www.rezasafa.com//assets/img/founder-reza-safa.jpg"}} />
          </View> 
 

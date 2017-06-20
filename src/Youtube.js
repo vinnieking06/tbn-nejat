@@ -2,18 +2,37 @@ import React from 'react';
 import { StyleSheet, Text, View, Button, TextInput, TouchableOpacity, WebView, Image, ScrollView, Dimensions } from 'react-native';
 import { TabNavigator, StackNavigator, withNavigation, navigation } from "react-navigation";
 import Data from './../assets/YoutubeData';
-const youTubeIcon = require('./../assets/youtube.png');
 import Video from 'react-native-video';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-class Mideo extends React.Component {
-    componentDidMount(){
-        this.videoRef.presentFullscreenPlayer()
+class YoutubeContainer extends React.Component {
+    
+  static navigationOptions = {
+    tabBarLabel: 'Youtube',
+    title: 'Youtube',
+    tabBarIcon: ()=> (<Icon name="youtube" size={30} color="white" />)
+   };
+
+    constructor(props) {
+        super(props);
+        this.state = {videoData: ''};
     }
+
+    componentDidMount(){
+        this.setState({videoData: Data})
+    }
+
     render() {
-       return (
-            <Video style={styles.backgroundVideo} ref={ref => this.videoRef = ref} source={{uri: "https://player.vimeo.com/external/210669689.hd.mp4?s=4316aec92a87ee86a734f0e134ad6ba161549cba&profile_id=119"}} />
-       ) 
+        const data = this.state.videoData;
+        const videoComponents = [];
+        for (let i = 0; i < data.length; i++) {
+            videoComponents.push(<Youtube videoView={this.videoView} key={i} video={data[i]} navigation={this.props.navigation} />)
+        }
+            return (
+                <ScrollView contentContainerStyle={{flexDirection:'column', flex:1, justifyContent:'space-between', marginLeft:10, marginRight:10 }} >
+                {videoComponents}
+                </ScrollView>
+            );
     }
 }
 
@@ -53,37 +72,20 @@ class Youtube extends React.Component {
         }
   } 
 
-class YoutubeContainer extends React.Component {
-    
-  static navigationOptions = {
-    tabBarLabel: 'Youtube',
-    title: 'Youtube',
-    tabBarIcon: ()=> (<Icon name="youtube" size={30} color="white" />)
-   };
 
-    constructor(props) {
-        super(props);
-        this.state = {videoData: ''};
-    }
-
-
+class Mideo extends React.Component {
     componentDidMount(){
-        this.setState({videoData: Data})
+        this.videoRef.presentFullscreenPlayer()
     }
-
     render() {
-        const data = this.state.videoData;
-        const videoComponents = [];
-        for (let i = 0; i < data.length; i++) {
-            videoComponents.push(<Youtube videoView={this.videoView} key={i} video={data[i]} navigation={this.props.navigation} />)
-        }
-            return (
-                <ScrollView contentContainerStyle={{flexDirection:'column', flex:1, justifyContent:'space-between', marginLeft:10, marginRight:10 }} >
-                {videoComponents}
-                </ScrollView>
-            );
+       return (
+            <Video style={styles.backgroundVideo} ref={ref => this.videoRef = ref} source={{uri: "https://player.vimeo.com/external/210669689.hd.mp4?s=4316aec92a87ee86a734f0e134ad6ba161549cba&profile_id=119"}} />
+       ) 
     }
 }
+
+
+
 
 const YoutubeRouter = StackNavigator({
   List: { screen: YoutubeContainer},
