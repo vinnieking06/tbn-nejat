@@ -1,7 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, View,Button, TextInput, TouchableOpacity, WebView, Image, Icon, ScrollView } from 'react-native';
+import { StyleSheet, Text, View,Button, TextInput, TouchableOpacity, WebView, Image, ScrollView } from 'react-native';
 import { TabNavigator, StackNavigator, withNavigation, navigation } from "react-navigation";
 import Data from './../../assets/BroadcastData';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 
 export class BroadcasterContainer extends React.Component {
@@ -47,6 +48,7 @@ export class BroadcasterContainer extends React.Component {
 }
 
 class Program extends React.Component {
+  
   open(open, program){
     if (open) {
       return <OpenProgram navigation={this.props.navigation} program={program} />
@@ -55,22 +57,28 @@ class Program extends React.Component {
       return null
     } 
   }
+
   render(){
     const props = this.props;
       return (
-        <View style={styles.program} >
-          <View >
-          <TouchableOpacity onPress={()=>{props.toggleProgram(props.program.index)}}>
+        <View style={styles.item} >
+
+         <View style={{}}>
+           <Image style={{flex: 1, width: 50, borderRadius: 25}} source={{uri: "https://www.rezasafa.com//assets/img/founder-reza-safa.jpg"}} />
+         </View> 
+
             <Text>{props.program.program}</Text>
             <Text>{props.program.ministry}</Text>
+
+          <TouchableOpacity onPress={()=>{props.toggleProgram(props.program.index)}}>
+            <Icon name="chevron-down" size={15} color='blue' />
           </TouchableOpacity>
-          </View>
+
           {this.open(props.program.open, props.program)}
         </View>
       )
 
   }
-
 }
 
 class OpenProgram extends React.Component {
@@ -114,5 +122,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     height: 100,
     borderWidth: 0.5
+  },
+  item: {
+    flex: 1,
+    flexDirection: 'row',
+    borderWidth: 0.5,
+    height: 60
   }
 })
