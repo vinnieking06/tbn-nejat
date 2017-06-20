@@ -8,9 +8,34 @@ export default class Founder extends React.Component {
   };
   render() {
     return (
-      <View>
-        <Text>Something about Founder</Text>
-      </View>
+    <View style={styles.container}>
+      <Image 
+        style={styles.backdrop} 
+        source={{uri: 'https://pbs.twimg.com/profile_images/769302486142160896/oivxTK1R.jpg'}}>
+          <View style={styles.backdropView}>
+            <Text style={{color: 'white'}}>Headline</Text>
+          </View>
+      </Image>
+    </View>
     );
   }
 }
+
+var styles = StyleSheet.create({
+  container: {
+    flex: 1,    
+  },
+  backdrop: {
+  },
+  backdropView: {
+    width:'100%',
+    height: '100%',
+    backgroundColor: 'rgba(0,0,0,0)',
+  },
+  headline: {
+    fontSize: 20,
+    textAlign: 'center',
+    backgroundColor: 'rgba(0,0,0,0)',
+    color: 'white'
+  }
+});

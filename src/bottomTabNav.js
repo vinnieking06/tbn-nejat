@@ -4,17 +4,8 @@ import { TabNavigator, StackNavigator, withNavigation } from "react-navigation";
 import About from './about/About';
 import Youtube from './Youtube';
 import Contact from './Contact';
-import Watch from './Watch'
-
-class Donate extends React.Component {
-  render() {
-    return (
-      <WebView
-        source={{uri:'https://rezasafa.com/donate_mobile/'}}
-      />
-    );
-  }
-}
+import Watch from './Watch';
+import Donate from './Donate';
 
  const Tabs = TabNavigator({
   About: {
@@ -26,16 +17,16 @@ class Donate extends React.Component {
   Watch: {
     screen: Watch
   },
-  Contact: {
-    screen: Contact,
-  },
   Youtube: {
     screen: Youtube,
+  },
+    Contact: {
+    screen: Contact,
   }
   }, {
     tabBarOptions: {
       style: {
-        backgroundColor: 'white'
+        backgroundColor: '#000080'
       }
     },
     initialRouteName: 'Watch'

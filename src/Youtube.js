@@ -4,6 +4,7 @@ import { TabNavigator, StackNavigator, withNavigation, navigation } from "react-
 import Data from './../assets/YoutubeData';
 const youTubeIcon = require('./../assets/youtube.png');
 import Video from 'react-native-video';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 class Mideo extends React.Component {
 
@@ -18,17 +19,35 @@ class Mideo extends React.Component {
 }
 
 class Youtube extends React.Component {
+        secondsParser(time){
+        // Hours, minutes and seconds
+        var hrs = ~~(time / 3600);
+        var mins = ~~((time % 3600) / 60);
+        var secs = time % 60;
+
+        var ret = "";
+
+        if (hrs > 0) {
+            ret += "" + hrs + ":" + (mins < 10 ? "0" : "");
+        }
+
+        ret += "" + mins + ":" + (secs < 10 ? "0" : "");
+        ret += "" + secs;
+        return ret;
+    }
         render(){
             const data = this.props.video;
+            const parsedTime = this.secondsParser(data.duration);
+
             return (
                 <View style={styles.video}>
                     <TouchableOpacity onPress={() => {this.props.navigation.navigate('Video', {video: data.url})}}>
-                        <Image style={styles.thumbnail} source={{uri: data.thumbnail }} />
+                        <Image source={{uri: 'https://jpeg.org/images/jpegls-home.jpg'}} style={styles.thumbnail} />
                     </TouchableOpacity>
                     <View style={{flex:1}}>
                         <Text style={{fontSize: 9, fontWeight: 'bold'}}>{data.title}</Text>
                         <Text style={{fontSize: 8}}>{data.shortDescription}</Text>
-                        <Text style={{fontSize: 8}}>Length: {data.duration}</Text>
+                        <Text style={{fontSize: 8}}>Length: {parsedTime}</Text>
                     </View>
                 </ View>
             );
@@ -40,13 +59,7 @@ class YoutubeContainer extends React.Component {
   static navigationOptions = {
     tabBarLabel: 'Youtube',
     title: 'Youtube',
-    // Note: By default the icon is only shown on iOS. Search the showIcon option below.
-    tabBarIcon: ({ tintColor }) => (
-      <Image
-        source={youTubeIcon}
-        style={[styles.icon, {tintColor: tintColor}]}
-      />
-    ),
+    tabBarIcon: ()=> (<Icon name="youtube" size={30} color="white" />)
    };
 
     constructor(props) {
@@ -55,22 +68,22 @@ class YoutubeContainer extends React.Component {
     }
 
 
-  componentDidMount(){
-    this.setState({videoData: Data})
-  }
-
-  render() {
-    const data = this.state.videoData;
-    const videoComponents = [];
-    for (let i = 0; i < data.length; i++) {
-        videoComponents.push(<Youtube videoView={this.videoView} key={i} video={data[i]} navigation={this.props.navigation} />)
+    componentDidMount(){
+        this.setState({videoData: Data})
     }
-        return (
-            <ScrollView contentContainerStyle={{flexDirection:'column', flex:1, justifyContent:'space-between', marginLeft:10, marginRight:10 }} >
-            {videoComponents}
-            </ScrollView>
-        );
-  }
+
+    render() {
+        const data = this.state.videoData;
+        const videoComponents = [];
+        for (let i = 0; i < data.length; i++) {
+            videoComponents.push(<Youtube videoView={this.videoView} key={i} video={data[i]} navigation={this.props.navigation} />)
+        }
+            return (
+                <ScrollView contentContainerStyle={{flexDirection:'column', flex:1, justifyContent:'space-between', marginLeft:10, marginRight:10 }} >
+                {videoComponents}
+                </ScrollView>
+            );
+    }
 }
 
 const YoutubeRouter = StackNavigator({
@@ -93,6 +106,7 @@ const styles = StyleSheet.create({
     thumbnail: {
         width: 100,
         height: 100,
+        flex:1
   },
     backgroundVideo: {
 

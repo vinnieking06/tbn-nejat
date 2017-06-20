@@ -1,8 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, View,Button, TextInput, TouchableOpacity, WebView, Image } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 class Watch extends React.Component {
-    
+    static navigationOptions = {
+    tabBarIcon: () => (<Icon name="youtube-play" size={30} color="white" />)
+    };
     handlePress(){
         console.log('change color and link')
     };

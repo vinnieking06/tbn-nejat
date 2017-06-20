@@ -9,7 +9,8 @@ export default class Schedule extends React.Component {
   render() {
     return (
       <View>
-        <Text>Something about Scheduling</Text>
+        <Text>Time</Text>
+        <Text> Program</Text>
       </View>
     );
   }
