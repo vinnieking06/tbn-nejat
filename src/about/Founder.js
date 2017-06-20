@@ -11,7 +11,7 @@ export default class Founder extends React.Component {
     <View style={styles.container}>
       <Image 
         style={styles.backdrop} 
-        source={{uri: 'https://pbs.twimg.com/profile_images/769302486142160896/oivxTK1R.jpg'}}>
+        source={{uri: 'https://www.rezasafa.com//assets/img/founder-reza-safa.jpg'}}>
           <View style={styles.backdropView}>
             <Text style={{color: 'white'}}>Headline</Text>
           </View>

@@ -1,18 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, View,Button, TextInput, TouchableOpacity, WebView, Image } from 'react-native';
-import { TabNavigator, StackNavigator, withNavigation, navigation } from "react-navigation";
-import {BroadcasterContainer, BroadcasterInfo} from './Broadcasters';
-import {TestimoniesContainer, TestimonyInfo} from './Testimonies';
-import Satellite from './Satellite';
-import Schedule from './Schedule';
-import Founder from './Founder';
+import { navigation } from "react-navigation";
 import Icon from 'react-native-vector-icons/FontAwesome';
 
- class HomeScreen extends React.Component {
-
+export default class HomeScreen extends React.Component {
   static navigationOptions = {
-    title: 'About Us',
-    tabBarIcon: () => (<Icon name="info-circle" size={30} color="white" />)
+    title: 'About Us'
   };
 
   constructor(props){
@@ -48,18 +41,6 @@ const ButtonImage = (props) => {
       </TouchableOpacity>
   )
 }
-const About = StackNavigator({
-  Home: { screen: HomeScreen},
-  Broadcaster: { screen: BroadcasterContainer },
-  Schedule: {screen: Schedule},
-  Testimonies: {screen: TestimoniesContainer},
-  Satellite: {screen: Satellite},
-  Founder: {screen: Founder},
-  BroadcasterInfo: {screen: BroadcasterInfo},
-  TestimonyInfo: {screen: TestimonyInfo}
-},{headerMode: 'screen', navigationOptions: {
-    headerTintColor: 'black', headerBackTitle: null, headerStyle: {backgroundColor: 'white', borderBottomWidth: 0}
-}});
 
 const styles = StyleSheet.create({
   container: {
@@ -82,5 +63,5 @@ const styles = StyleSheet.create({
   }
 })
 
-export default About;
+
 

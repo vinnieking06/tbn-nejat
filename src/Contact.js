@@ -3,9 +3,6 @@ import { StyleSheet, Text, View,Button, TextInput, TouchableOpacity, WebView, Im
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class Contact extends React.Component {
-    static navigationOptions = {
-    tabBarIcon: () => (<Icon name="phone" size={30} color="white" />)
-   };
    render(){
        return(
         <View style={styles.container}>
@@ -18,8 +15,6 @@ export default class Contact extends React.Component {
    }
 
 }
-
-
 
 const styles = StyleSheet.create({
   container: {

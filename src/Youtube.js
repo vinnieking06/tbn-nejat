@@ -7,7 +7,6 @@ import Video from 'react-native-video';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 class Mideo extends React.Component {
-
     componentDidMount(){
         this.videoRef.presentFullscreenPlayer()
     }

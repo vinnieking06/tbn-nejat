@@ -6,7 +6,7 @@ import Data from './../../assets/BroadcastData';
 
 export class BroadcasterContainer extends React.Component {
   static navigationOptions = {
-    title: 'Broadcasters'
+    title: 'Broadcasters',
   };
 
   constructor(props) {
@@ -114,6 +114,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     height: 100,
     borderWidth: 0.5
-    
   }
 })
