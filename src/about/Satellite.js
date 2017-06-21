@@ -26,9 +26,14 @@ export default class SatelliteContainer extends React.Component {
 
 const TopImage = () => {
     return (
-        <View>
-            <Text>top image</Text>
-        </View>
+      <View style={styles.container}>
+        <Image style={{flex:1}} source={{uri: 'https://www.rezasafa.com//assets/img/founder-reza-safa.jpg'}}>
+            <View style={styles.backdropView}>
+              <Text style={{color: 'white'}}>Where we Broadcast</Text>
+              <Text style={{color: 'white'}}>Reaching 83 Million Muslims</Text>
+            </View>
+        </Image>
+      </View>
     )
 }
 
@@ -63,13 +68,24 @@ class List extends React.Component {
 const styles = StyleSheet.create({
   container: {
    flex: 1,
-   paddingTop: 22
   },
   item: {
     padding: 10,
     height: 44,
   },
   property: {
-    width: '25%'
+    width: '25%',
+    fontSize: 10
+  },
+  backdropView: {
+    width:'100%',
+    height: '100%',
+    backgroundColor: 'rgba(0,0,0,0)',
+  },
+  headline: {
+    fontSize: 20,
+    textAlign: 'center',
+    backgroundColor: 'rgba(0,0,0,0)',
+    color: 'white'
   }
 })

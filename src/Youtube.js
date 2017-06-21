@@ -84,9 +84,6 @@ class Mideo extends React.Component {
     }
 }
 
-
-
-
 const YoutubeRouter = StackNavigator({
   List: { screen: YoutubeContainer},
   Video: {screen: Mideo}

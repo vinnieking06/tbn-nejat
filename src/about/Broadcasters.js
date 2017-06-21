@@ -61,8 +61,8 @@ class Program extends React.Component {
   render(){
     const props = this.props;
       return (
+        <View style={styles.container}>
         <View style={styles.item} >
-
          <View>
            <Image style={{flex: 1, width: 50, borderRadius: 25}} source={{uri: "https://www.rezasafa.com//assets/img/founder-reza-safa.jpg"}} />
          </View> 
@@ -73,7 +73,7 @@ class Program extends React.Component {
           <TouchableOpacity onPress={()=>{props.toggleProgram(props.program.index)}}>
             <Icon name="chevron-down" size={15} color='blue' />
           </TouchableOpacity>
-
+        </View>
           {this.open(props.program.open, props.program)}
         </View>
       )
