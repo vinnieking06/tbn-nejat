@@ -51,7 +51,7 @@ class Program extends React.Component {
   
   open(open, program){
     if (open) {
-      return <OpenProgram navigation={this.props.navigation} program={program} />
+      return <OpenProgram toggleProgram={this.props.toggleProgram} navigation={this.props.navigation} program={program} />
     }
     else {
       return null
@@ -61,20 +61,21 @@ class Program extends React.Component {
   render(){
     const props = this.props;
       return (
-        <View style={styles.container}>
-        <View style={styles.item} >
-         <View>
-           <Image style={{flex: 1, width: 50, borderRadius: 25}} source={{uri: "https://www.rezasafa.com//assets/img/founder-reza-safa.jpg"}} />
-         </View> 
+        <View style={styles.itemContainer}>
+          <View style={styles.item} >
+          <View>
+            <Image style={{flex: 1, width: 50, borderRadius: 25}} source={{uri: "https://www.rezasafa.com//assets/img/founder-reza-safa.jpg"}} />
+          </View> 
+          <View style={{flex:1, flexDirection: 'column'}}>
+              <Text>{props.program.program}</Text>
+              <Text>{props.program.ministry}</Text>
+          </View>
+            <TouchableOpacity onPress={()=>{props.toggleProgram(props.program.index)}}>
+              <Icon name="chevron-down" size={15} color='blue' />
+            </TouchableOpacity>
 
-            <Text>{props.program.program}</Text>
-            <Text>{props.program.ministry}</Text>
-
-          <TouchableOpacity onPress={()=>{props.toggleProgram(props.program.index)}}>
-            <Icon name="chevron-down" size={15} color='blue' />
-          </TouchableOpacity>
-        </View>
-          {this.open(props.program.open, props.program)}
+          </View>
+            {this.open(props.program.open, props.program)}
         </View>
       )
 
@@ -85,11 +86,20 @@ class OpenProgram extends React.Component {
   render(){
     const props = this.props
     return (
-        <View style={{flex:1, flexDirection: 'column'}}>
-          <Text>{props.program.ministry}</Text>
-          <Text>{props.program.days}</Text>
-          <Text>{props.program.time}</Text>
-          <Button title="More info" onPress={()=>{props.navigation.navigate('BroadcasterInfo', {info: props.program.info})}} />
+        <View style={{flex:1, flexDirection: 'column', height: 300}}>
+          <Image style={{flex:1}} source={{uri: "https://jpeg.org/images/jpeg-home.jpg"}}>
+          <View style={{ backgroundColor: 'rgba(0,0,0,0)'}}>
+          <TouchableOpacity style={{paddingLeft:350}} onPress={()=>{props.toggleProgram(props.program.index)}}><Icon name="times-circle-o" size={20} color="white" /></TouchableOpacity>
+            <Text style={styles.text}>{props.program.ministry}</Text>
+            <Text style={styles.text}>{props.program.days}</Text>
+            <Text style={styles.text}>{props.program.time}</Text>
+          <TouchableOpacity style={{flexDirection:"row", paddingTop:150}} onPress={()=>{props.navigation.navigate('BroadcasterInfo', {info: props.program.info})}}>
+           <Text style={{color:"blue"}}>More info</Text>
+            <Icon name="chevron-right" size={20} color="blue" />
+          </TouchableOpacity>
+          </View>
+          </Image>
+         
         </View>
       )
   }
@@ -110,23 +120,29 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'stretch'
   },
    program: {
-    alignItems: 'flex-start',
     justifyContent: 'center',
-    borderWidth: 0.5
   },
   openProgram: {
     alignItems: 'flex-start',
     justifyContent: 'center',
-    height: 100,
-    borderWidth: 0.5
+    height: 100
   },
   item: {
     flex: 1,
     flexDirection: 'row',
-    borderWidth: 0.5,
-    height: 60
+    height: 60,
+    marginLeft: 15,
+    marginRight: 15
+  },
+    itemContainer: {
+      flexDirection: 'column',
+      justifyContent: 'center',
+      borderBottomWidth: StyleSheet.hairlineWidth,
+      borderColor: 'silver',
+  },
+  text: {
+    color:'white'
   }
 })
