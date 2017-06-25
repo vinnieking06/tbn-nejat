@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View,Button, TextInput, TouchableOpacity, WebView, Image, Icon, ScrollView } from 'react-native';
 import { TabNavigator, StackNavigator, withNavigation, navigation } from "react-navigation";
 import Data from './../../assets/testimonyData';
+import {Program, OpenProgram} from './sharedComponents';
 
 export class TestimoniesContainer extends React.Component {
   static navigationOptions = {
@@ -37,58 +38,34 @@ export class TestimoniesContainer extends React.Component {
   render() {
     return (
       <ScrollView ContentContainerStyle={styles.container}>
-        {this.state.testimonies.map((test, index)=>{
-          return < Testimony navigation={this.props.navigation} toggleProgram={this.toggleProgram} open={test.open} key={index} test={test} />
+        {this.state.testimonies.map((program, index)=>{
+          return < Program  OpenProgramInfo={<OpenProgramInfo program={program} />} navdestination={"TestimonyInfo"} navInfo={program.testimony} imageUrl={"https://www.rezasafa.com//assets/img/founder-reza-safa.jpg"} programInfo={<ProgramInfo program={program} />} navigation={this.props.navigation} toggleProgram={this.toggleProgram} open={program.open} key={index} program={program} />
         })}
       </ScrollView>
     );
   }
 }
 
-class Testimony extends React.Component {
-  open(open, test){
-    if (open) {
-      return <OpenTestimoney navigation={this.props.navigation} test={test} />
-    }
-    else {
-      return null
-    } 
-  }
-  render(){
-    const props = this.props;
-      return (
-        <View style={styles.program} >
-          <View >
-          <TouchableOpacity onPress={()=>{props.toggleProgram(props.test.index)}}>
-            <Text>{props.test.name}</Text>
-            <Text>{props.test.country}</Text>
-          </TouchableOpacity>
-          </View>
-          {this.open(props.test.open, props.test)}
+const ProgramInfo = (props) => {
+  return (
+        <View style={{flex:1, flexDirection: 'column'}}>
+          <Text>{props.program.name}</Text>
+          <Text>{props.program.country}</Text>
         </View>
-      )
-
-  }
-
+  )
 }
 
-class OpenTestimoney extends React.Component {
-  render(){
-    const props = this.props
-    return (
-        <View style={{flex:1, flexDirection: 'column'}}>
-          <Text>{props.test.name}</Text>
-          <Text>{props.test.country}</Text>
-          <Text>{props.test.testimony}</Text>
-          <Button title="More info" onPress={()=>{props.navigation.navigate('TestimonyInfo', {testimony: props.test.testimony})}} />
-        </View>
-      )
-  }
-  
+const OpenProgramInfo = (props) => {
+  return (
+    <View>
+      <Text style={styles.text}>{props.program.name}</Text>
+      <Text style={styles.text}>{props.program.country}</Text>
+    </View>
+  )
 }
 
 export const TestimonyInfo = (props) => {
- const testimony = props.navigation.state.params.testimony;
+ const testimony = props.navigation.state.params.info;
   return (
     <View>
       <Text>{testimony}</Text>
@@ -113,6 +90,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     height: 100,
     borderWidth: 0.5
-    
+  },
+  text: {
+    color:'white'
   }
 })
