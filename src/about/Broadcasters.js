@@ -40,18 +40,18 @@ export class BroadcasterContainer extends React.Component {
     return (
       <ScrollView ContentContainerStyle={styles.container}>
         {this.state.programs.map((program, index)=>{
-          return < Program navigation={this.props.navigation} toggleProgram={this.toggleProgram} open={program.open} key={index} program={program} />
+          return < Program imageUrl={"https://www.rezasafa.com//assets/img/founder-reza-safa.jpg"} programInfo={<ProgramInfo program={program} />} navigation={this.props.navigation} toggleProgram={this.toggleProgram} open={program.open} key={index} program={program} />
         })}
       </ScrollView>
     );
   }
 }
 
-class Program extends React.Component {
+export class Program extends React.Component {
   
   open(open, program){
     if (open) {
-      return <OpenProgram toggleProgram={this.props.toggleProgram} navigation={this.props.navigation} program={program} />
+      return <OpenProgram OpenProgramInfo={<OpenProgramInfo program={program} />} toggleProgram={this.props.toggleProgram} navigation={this.props.navigation} program={program} />
     }
     else {
       return null
@@ -64,12 +64,9 @@ class Program extends React.Component {
         <View style={styles.itemContainer}>
           <View style={styles.item} >
           <View>
-            <Image style={{flex: 1, width: 50, borderRadius: 25}} source={{uri: "https://www.rezasafa.com//assets/img/founder-reza-safa.jpg"}} />
+            <Image style={{flex: 1, width: 50, borderRadius: 25}} source={{uri: props.imageUrl}} />
           </View> 
-          <View style={{flex:1, flexDirection: 'column'}}>
-              <Text>{props.program.program}</Text>
-              <Text>{props.program.ministry}</Text>
-          </View>
+          {props.programInfo}
             <TouchableOpacity onPress={()=>{props.toggleProgram(props.program.index)}}>
               <Icon name="chevron-down" size={15} color='blue' />
             </TouchableOpacity>
@@ -82,7 +79,26 @@ class Program extends React.Component {
   }
 }
 
-class OpenProgram extends React.Component {
+const ProgramInfo = (props) => {
+  return (
+    <View style={{flex:1, flexDirection: 'column'}}>
+        <Text>{props.program.program}</Text>
+        <Text>{props.program.ministry}</Text>
+    </View>
+  )
+}
+
+export const OpenProgramInfo = (props) => {
+  return (
+    <View>
+      <Text style={styles.text}>{props.program.ministry}</Text>
+      <Text style={styles.text}>{props.program.days}</Text>
+      <Text style={styles.text}>{props.program.time}</Text>
+    </View>
+  )
+}
+
+export class OpenProgram extends React.Component {
   render(){
     const props = this.props
     return (
@@ -90,9 +106,7 @@ class OpenProgram extends React.Component {
           <Image style={{flex:1}} source={{uri: "https://jpeg.org/images/jpeg-home.jpg"}}>
           <View style={{ backgroundColor: 'rgba(0,0,0,0)'}}>
           <TouchableOpacity style={{paddingLeft:350}} onPress={()=>{props.toggleProgram(props.program.index)}}><Icon name="times-circle-o" size={20} color="white" /></TouchableOpacity>
-            <Text style={styles.text}>{props.program.ministry}</Text>
-            <Text style={styles.text}>{props.program.days}</Text>
-            <Text style={styles.text}>{props.program.time}</Text>
+          {props.OpenProgramInfo}
           <TouchableOpacity style={{flexDirection:"row", paddingTop:150}} onPress={()=>{props.navigation.navigate('BroadcasterInfo', {info: props.program.info})}}>
            <Text style={{color:"blue"}}>More info</Text>
             <Icon name="chevron-right" size={20} color="blue" />
