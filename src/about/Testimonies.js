@@ -49,8 +49,8 @@ export class TestimoniesContainer extends React.Component {
 const ProgramInfo = (props) => {
   return (
         <View style={{flex:1, flexDirection: 'column'}}>
-          <Text style={styles.text}>{props.program.name}</Text>
-          <Text style={styles.text}>{props.program.country}</Text>
+          <Text>{props.program.name}</Text>
+          <Text>{props.program.country}</Text>
         </View>
   )
 }
@@ -58,8 +58,8 @@ const ProgramInfo = (props) => {
 const OpenProgramInfo = (props) => {
   return (
     <View>
-      <Text>{props.program.name}</Text>
-      <Text>{props.program.country}</Text>
+      <Text style={styles.text}>{props.program.name}</Text>
+      <Text style={styles.text}>{props.program.country}</Text>
     </View>
   )
 }
