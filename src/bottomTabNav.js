@@ -16,7 +16,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
     screen: Donate, navigationOptions: { title: 'Donate', tabBarIcon: () => (<Icon name="heart" size={30} color="white" />)}
   },
   Watch: {
-    screen: Watch, navigationOptions: { tabBarIcon: () => (<Icon name="youtube-play" size={30} color="white" />)}
+    screen: Watch, navigationOptions: {tabBarIcon: () => (<Icon name="youtube-play" size={30} color="white" />)}
   },
   Youtube: {
     screen: Youtube, navigationOptions: { tabBarIcon: () => (<Icon name="youtube" size={30} color="white" />)}
