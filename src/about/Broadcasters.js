@@ -1,10 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text, View,Button, TextInput, TouchableOpacity, WebView, Image, ScrollView } from 'react-native';
-import { TabNavigator, StackNavigator, withNavigation, navigation } from "react-navigation";
+import { StyleSheet, Text, View, Button, TouchableOpacity, Image, ScrollView } from 'react-native';
+import { TabNavigator, StackNavigator, navigation } from "react-navigation";
 import Data from './../../assets/BroadcastData';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {Program, OpenProgram} from './sharedComponents';
-
 
 export class BroadcasterContainer extends React.Component {
   static navigationOptions = {
@@ -72,7 +71,7 @@ export const BroadcasterInfo = (props) => {
   return (
     <View>
       <Text>{info}</Text>
-      </View>
+    </View>
   )
 }
 

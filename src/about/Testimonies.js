@@ -48,10 +48,10 @@ export class TestimoniesContainer extends React.Component {
 
 const ProgramInfo = (props) => {
   return (
-        <View style={{flex:1, flexDirection: 'column'}}>
-          <Text>{props.program.name}</Text>
-          <Text>{props.program.country}</Text>
-        </View>
+    <View style={{flex:1, flexDirection: 'column'}}>
+      <Text>{props.program.name}</Text>
+      <Text>{props.program.country}</Text>
+    </View>
   )
 }
 
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'stretch'
   },
-   program: {
+  program: {
     alignItems: 'flex-start',
     justifyContent: 'center',
     borderWidth: 0.5

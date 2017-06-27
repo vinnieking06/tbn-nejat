@@ -3,6 +3,10 @@ import { StyleSheet, Text, View,Button, TextInput, TouchableOpacity, WebView, Im
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 class Watch extends React.Component {
+    static navigationOptions = {
+        title: 'Watch Live'
+    };
+
     handlePress(){
         console.log('change color and link')
     };
@@ -27,7 +31,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   buttons: {
-      flexDirection: 'row'
+    flexDirection: 'row'
   },
   section: {
     flexDirection: 'column',

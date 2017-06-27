@@ -22,5 +22,4 @@ const AboutRouter = StackNavigator({
     headerTintColor: 'black', headerBackTitle: null, headerStyle: { borderBottomWidth: 0}
 }});
 
-
 export default AboutRouter
