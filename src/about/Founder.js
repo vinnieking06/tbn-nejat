@@ -13,7 +13,9 @@ export default class Founder extends React.Component {
         style={styles.backdrop} 
         source={{uri: 'https://www.rezasafa.com//assets/img/founder-reza-safa.jpg'}}>
           <View style={styles.backdropView}>
-            <Text style={{color: 'white'}}>Headline</Text>
+            <Text style={{color: 'white'}}>
+              
+            </Text>
           </View>
       </Image>
     </View>
