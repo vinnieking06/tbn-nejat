@@ -38,21 +38,21 @@ class YoutubeContainer extends React.Component {
 
 class Youtube extends React.Component {
         secondsParser(time){
-        // Hours, minutes and seconds
-        var hrs = ~~(time / 3600);
-        var mins = ~~((time % 3600) / 60);
-        var secs = time % 60;
+            // Hours, minutes and seconds
+            var hrs = ~~(time / 3600);
+            var mins = ~~((time % 3600) / 60);
+            var secs = time % 60;
 
-        var ret = "";
+            var ret = "";
 
-        if (hrs > 0) {
-            ret += "" + hrs + ":" + (mins < 10 ? "0" : "");
+            if (hrs > 0) {
+                ret += "" + hrs + ":" + (mins < 10 ? "0" : "");
+            }
+
+            ret += "" + mins + ":" + (secs < 10 ? "0" : "");
+            ret += "" + secs;
+            return ret;
         }
-
-        ret += "" + mins + ":" + (secs < 10 ? "0" : "");
-        ret += "" + secs;
-        return ret;
-    }
         render(){
             const data = this.props.video;
             const parsedTime = this.secondsParser(data.duration);
@@ -74,12 +74,9 @@ class Youtube extends React.Component {
 
 
 class Mideo extends React.Component {
-    componentDidMount(){
-        this.videoRef.presentFullscreenPlayer()
-    }
     render() {
        return (
-        <Video style={styles.backgroundVideo} ref={ref => this.videoRef = ref} source={{uri: "https://player.vimeo.com/external/210669689.hd.mp4?s=4316aec92a87ee86a734f0e134ad6ba161549cba&profile_id=119"}} />
+        <Video style={styles.backgroundVideo} muted={false}  resizeMode="cover"   ref={ref => this.videoRef = ref} source={{uri: "https://player.vimeo.com/external/210669689.hd.mp4?s=4316aec92a87ee86a734f0e134ad6ba161549cba&profile_id=119"}} />
        ) 
     }
 }
@@ -107,7 +104,11 @@ const styles = StyleSheet.create({
         flex:1
   },
     backgroundVideo: {
-
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        bottom: 0,
+        right: 0,
   },
 })
 
