@@ -2,15 +2,16 @@ import React from 'react';
 import { StyleSheet, Text, View, Button, TextInput, TouchableOpacity, WebView, Image, ScrollView, Dimensions } from 'react-native';
 import { TabNavigator, StackNavigator, withNavigation, navigation } from "react-navigation";
 import Data from './../assets/YoutubeData';
-import Video from 'react-native-video';
+//import Video from 'react-native-video';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import VideoPlayer from 'react-native-video-controls';
 
 class YoutubeContainer extends React.Component {
     
   static navigationOptions = {
     tabBarLabel: 'Youtube',
     title: 'Youtube',
-    tabBarIcon: ()=> (<Icon name="youtube" size={30} color="white" />)
+    tabBarIcon: ()=> (<Icon name="youtube" size={30} color="white" />), headerTintColor: 'black', headerBackTitle: null, headerStyle: {backgroundColor: null, borderBottomWidth: 0}
    };
 
     constructor(props) {
@@ -73,20 +74,27 @@ class Youtube extends React.Component {
   } 
 
 
+
 class Mideo extends React.Component {
-    render() {
-       return (
-        <Video style={styles.backgroundVideo} muted={false}  resizeMode="cover"   ref={ref => this.videoRef = ref} source={{uri: "https://player.vimeo.com/external/210669689.hd.mp4?s=4316aec92a87ee86a734f0e134ad6ba161549cba&profile_id=119"}} />
-       ) 
+  static navigationOptions = {
+    header:null
+  }
+    render(){
+        return (
+            <VideoPlayer
+                source={{ uri: 'https://player.vimeo.com/external/210669689.hd.mp4?s=4316aec92a87ee86a734f0e134ad6ba161549cba&profile_id=119' }}
+                resizeMode={ 'cover' }  
+                onBack={()=>{this.props.navigation.navigate('List')}}
+                playInBackground={ false }
+            />
+        )
     }
 }
 
 const YoutubeRouter = StackNavigator({
   List: { screen: YoutubeContainer},
   Video: {screen: Mideo}},
-  {headerMode: 'screen', navigationOptions: {
-    headerTintColor: 'black', headerBackTitle: null, headerStyle: {backgroundColor: null, borderBottomWidth: 0}
-    }});
+);
 
 const styles = StyleSheet.create({
     video: {

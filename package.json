@@ -20,6 +20,7 @@
     "react-native": "^0.44.0",
     "react-native-vector-icons": "^4.2.0",
     "react-native-video": "^1.0.0",
+    "react-native-video-controls": "^1.2.1",
     "react-navigation": "^1.0.0-beta.11"
   }
 }
