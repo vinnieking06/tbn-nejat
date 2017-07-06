@@ -79,13 +79,22 @@ class Mideo extends React.Component {
   static navigationOptions = {
     header:null
   }
+  constructor(props){
+      super(props);
+      this.state = {paused: false};
+  }
+  stop(){
+      this.player.methods.stopVideo()
+  }
+
     render(){
         return (
             <VideoPlayer
                 source={{ uri: 'https://player.vimeo.com/external/210669689.hd.mp4?s=4316aec92a87ee86a734f0e134ad6ba161549cba&profile_id=119' }}
                 resizeMode={ 'cover' }  
-                onBack={()=>{this.props.navigation.navigate('List')}}
-                playInBackground={ false }
+                onBack={()=>{ this.stop(); this.props.navigation.navigate('List')}}
+                ref={(ref) => {this.player = ref}} 
+                
             />
         )
     }
