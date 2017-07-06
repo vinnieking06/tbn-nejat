@@ -76,13 +76,11 @@ class Youtube extends React.Component {
 
 
 class Mideo extends React.Component {
+    
   static navigationOptions = {
     header:null
   }
-  constructor(props){
-      super(props);
-      this.state = {paused: false};
-  }
+
   stop(){
       this.player.methods.stopVideo()
   }
