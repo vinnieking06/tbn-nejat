@@ -76,7 +76,7 @@ class Youtube extends React.Component {
 
 
 class Mideo extends React.Component {
-    
+
   static navigationOptions = {
     header:null
   }
@@ -92,7 +92,6 @@ class Mideo extends React.Component {
                 resizeMode={ 'cover' }  
                 onBack={()=>{ this.stop(); this.props.navigation.navigate('List')}}
                 ref={(ref) => {this.player = ref}} 
-                
             />
         )
     }
