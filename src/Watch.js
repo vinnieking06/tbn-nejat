@@ -14,7 +14,7 @@ class Watch extends React.Component {
         return (
             <View style={styles.container}>
                     <View style={styles.section}>
-                        <Button onPress={this.handlePress} title="Watch"/>
+                        <Button style={{}} onPress={this.handlePress} color="pink" title="Watch Now"/>
                         <Text>Watch Now</Text>
                         <Text>Click here</Text>
                     </View>

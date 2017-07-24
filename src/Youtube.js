@@ -11,7 +11,7 @@ class YoutubeContainer extends React.Component {
   static navigationOptions = {
     tabBarLabel: 'Youtube',
     title: 'Youtube',
-    tabBarIcon: ()=> (<Icon name="youtube" size={30} color="white" />), headerTintColor: 'black', headerBackTitle: null, headerStyle: {backgroundColor: null, borderBottomWidth: 0}
+    headerLeft: null
    };
 
     constructor(props) {
