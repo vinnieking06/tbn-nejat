@@ -47,15 +47,15 @@ const styles = StyleSheet.create({
     width: 150,
     height: 50
     },
-    textBig: {
+  textBig: {
         color: 'white',
         marginBottom: 3
     },
-    textSmall: {
+  textSmall: {
         color: 'green',
         fontSize: 12
     },
-    icon: {
+  icon: {
         marginLeft: 15
     }
 })
