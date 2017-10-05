@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     marginLeft: 15,
     marginRight: 15
   },
-    itemContainer: {
+  itemContainer: {
       flexDirection: 'column',
       justifyContent: 'center',
       borderBottomWidth: StyleSheet.hairlineWidth,

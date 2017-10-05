@@ -16,11 +16,11 @@ class YoutubeContainer extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {videoData: ''};
+        this.state = { videoData: '' };
     }
 
     componentDidMount(){
-        this.setState({videoData: Data})
+        this.setState({ videoData: Data })
     }
 
     render() {
@@ -30,8 +30,8 @@ class YoutubeContainer extends React.Component {
             videoComponents.push(<Youtube videoView={this.videoView} key={i} video={data[i]} navigation={this.props.navigation} />)
         }
         return (
-            <ScrollView contentContainerStyle={{flexDirection:'column', flex:1, justifyContent:'space-between', marginLeft:10, marginRight:10 }} >
-            {videoComponents}
+            <ScrollView contentContainerStyle={{flexDirection:'column', flex:1, justifyContent:'space-between', marginLeft:10, marginRight:10, backgroundColor: 'white' }} >
+            { videoComponents }
             </ScrollView>
         );
     }
@@ -61,12 +61,12 @@ class Youtube extends React.Component {
             return (
                 <View style={styles.video}>
                     <TouchableOpacity onPress={() => {this.props.navigation.navigate('Video', {video: data.url})}}>
-                        <Image source={{uri: 'https://jpeg.org/images/jpegls-home.jpg'}} style={styles.thumbnail} />
+                        <Image source={{ uri: 'https://jpeg.org/images/jpegls-home.jpg'}} style={styles.thumbnail } />
                     </TouchableOpacity>
                     <View style={{flex:1}}>
-                        <Text style={{fontSize: 9, fontWeight: 'bold'}}>{data.title}</Text>
-                        <Text style={{fontSize: 8}}>{data.shortDescription}</Text>
-                        <Text style={{fontSize: 8}}>Length: {parsedTime}</Text>
+                        <Text style={{ fontSize: 9, fontWeight: 'bold'}}>{data.title }</Text>
+                        <Text style={{ fontSize: 8}}>{data.shortDescription }</Text>
+                        <Text style={{ fontSize: 8}}>Length: {parsedTime }</Text>
                     </View>
                 </ View>
             );
@@ -98,8 +98,8 @@ class Mideo extends React.Component {
 }
 
 const YoutubeRouter = StackNavigator({
-  List: { screen: YoutubeContainer},
-  Video: {screen: Mideo}},
+  List: { screen: YoutubeContainer },
+  Video: { screen: Mideo }},
 );
 
 const styles = StyleSheet.create({
