@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View,Button, TextInput, TouchableOpacity, WebView, Image } from 'react-native';
 import { navigation } from "react-navigation";
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/FontAwesome.js';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {

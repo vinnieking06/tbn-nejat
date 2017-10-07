@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Button, TextInput, TouchableOpacity, WebView, I
 import { TabNavigator, StackNavigator, withNavigation, navigation } from "react-navigation";
 import Data from './../assets/YoutubeData';
 //import Video from 'react-native-video';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/FontAwesome.js';
 import VideoPlayer from 'react-native-video-controls';
 
 class YoutubeContainer extends React.Component {
@@ -90,7 +90,8 @@ class Mideo extends React.Component {
             <VideoPlayer
                 source={{ uri: 'https://player.vimeo.com/external/210669689.hd.mp4?s=4316aec92a87ee86a734f0e134ad6ba161549cba&profile_id=119' }}
                 resizeMode={ 'cover' }  
-                onBack={()=>{ this.stop(); this.props.navigation.navigate('List')}}
+               // onBack={()=>{ this.stop(); this.props.navigation.navigate('List')}}
+                onBack={()=>{this.props.navigation.navigate('List')}}
                 ref={(ref) => {this.player = ref}} 
             />
         )

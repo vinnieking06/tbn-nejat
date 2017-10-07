@@ -6,7 +6,7 @@ import Youtube from './Youtube';
 import Contact from './Contact';
 import Watch from './Watch';
 import Donate from './Donate';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/FontAwesome.js';
 
  const Tabs = TabNavigator({
   About: {

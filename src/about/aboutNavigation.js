@@ -7,7 +7,7 @@ import Satellite from './Satellite';
 import Schedule from './Schedule';
 import Founder from './Founder';
 import HomeScreen from './About';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/FontAwesome.js';
 
 const AboutRouter = StackNavigator({
   Home: { screen: HomeScreen},

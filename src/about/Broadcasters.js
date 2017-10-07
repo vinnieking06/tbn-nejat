@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Button, TouchableOpacity, Image, ScrollView } from 'react-native';
 import { TabNavigator, StackNavigator, navigation } from "react-navigation";
 import Data from './../../assets/BroadcastData';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/FontAwesome.js';
 import {Program, OpenProgram} from './sharedComponents';
 
 export class BroadcasterContainer extends React.Component {
