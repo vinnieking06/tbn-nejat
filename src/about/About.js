@@ -23,7 +23,6 @@ export default class HomeScreen extends React.Component {
     return (
       <View style={styles.container}>
         <ButtonImage page={'Broadcaster'} changePage={this.changePage} image={'https://jpeg.org/images/jpeg2000-home.jpg'} />
-        <ButtonImage page={'Schedule'} changePage={this.changePage} image={'https://svs.gsfc.nasa.gov/vis/a010000/a011100/a011146/still_nile_576.jpg'} />
         <ButtonImage page={'Satellite'} changePage={this.changePage} image={'https://upload.wikimedia.org/wikipedia/commons/e/e6/Trees-sky.jpg'} />
         <ButtonImage page={'Testimonies'} changePage={this.changePage} image={'https://svs.gsfc.nasa.gov/vis/a010000/a011100/a011146/still_nile_576.jpg'} />
         <ButtonImage page={'Founder'} changePage={this.changePage} image={'https://www.mycadsite.com/cad_08/tutorials/level_3/images/sky.jpg'} />
