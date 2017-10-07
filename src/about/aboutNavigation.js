@@ -4,7 +4,6 @@ import { TabNavigator, StackNavigator, withNavigation, navigation } from "react-
 import {BroadcasterContainer, BroadcasterInfo} from './Broadcasters';
 import {TestimoniesContainer, TestimonyInfo} from './Testimonies';
 import Satellite from './Satellite';
-import Schedule from './Schedule';
 import Founder from './Founder';
 import HomeScreen from './About';
 import Icon from 'react-native-vector-icons/FontAwesome.js';
@@ -12,7 +11,6 @@ import Icon from 'react-native-vector-icons/FontAwesome.js';
 const AboutRouter = StackNavigator({
   Home: { screen: HomeScreen},
   Broadcaster: { screen: BroadcasterContainer },
-  Schedule: {screen: Schedule},
   Testimonies: {screen: TestimoniesContainer},
   Satellite: {screen: Satellite},
   Founder: {screen: Founder},
