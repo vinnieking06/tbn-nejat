@@ -6,7 +6,7 @@
 	<dict>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<data>
-		aqUe7zdKyA1Z0RHE5kpnNGA67QY=
+		kNdJNQyV4/KI3rJaohz9UymlE40=
 		</data>
 		<key>Entypo.ttf</key>
 		<data>
@@ -18,7 +18,7 @@
 		</data>
 		<key>Feather.ttf</key>
 		<data>
-		VT41BPvwquY0jcO3k8YUn00lmRc=
+		AiHzjp4t0CEzVCcxbr7QXuznQyM=
 		</data>
 		<key>FontAwesome.ttf</key>
 		<data>
@@ -243,7 +243,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		qB6cIcmgeBSgBpjx3W8cDEpzPLE=
+		W6z91GQ6WEWIzbsn1ApoHSNXxMw=
 		</data>
 		<key>Ionicons.ttf</key>
 		<data>
@@ -271,7 +271,7 @@
 		</data>
 		<key>PlugIns/nejatTests.xctest.dSYM/Contents/Resources/DWARF/nejatTests</key>
 		<data>
-		GKRzhl/NClFZLC2D5pwkx1t+pMc=
+		hgcUpzKs4RUrM3IiqxTK/KpyFHY=
 		</data>
 		<key>PlugIns/nejatTests.xctest/Info.plist</key>
 		<data>
@@ -283,7 +283,7 @@
 		</data>
 		<key>PlugIns/nejatTests.xctest/nejatTests</key>
 		<data>
-		i3+rdhLZWw1pyWtJAo/B3flPhuY=
+		sWRQGNfO/BxMbMfDMCeB5xY5NPY=
 		</data>
 		<key>SimpleLineIcons.ttf</key>
 		<data>
@@ -300,11 +300,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			aqUe7zdKyA1Z0RHE5kpnNGA67QY=
+			kNdJNQyV4/KI3rJaohz9UymlE40=
 			</data>
 			<key>hash2</key>
 			<data>
-			ftSnVrX1It+yzidomUOGxMvmYxWvASN4eR9iZksk5hg=
+			/aEVmAnU92gyFul9X5MAEP75rkqrpQvkRWSQYO5jWQ4=
 			</data>
 		</dict>
 		<key>Entypo.ttf</key>
@@ -333,11 +333,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			VT41BPvwquY0jcO3k8YUn00lmRc=
+			AiHzjp4t0CEzVCcxbr7QXuznQyM=
 			</data>
 			<key>hash2</key>
 			<data>
-			q+sHcPu8MtiSQYruRKCQSBn5LNTXnXkImDEnyIRSFfw=
+			sse5lKY8HPl6gBWzGq4njD9mmOqvSOduEWdc+dNdrHY=
 			</data>
 		</dict>
 		<key>FontAwesome.ttf</key>
@@ -995,11 +995,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			GKRzhl/NClFZLC2D5pwkx1t+pMc=
+			hgcUpzKs4RUrM3IiqxTK/KpyFHY=
 			</data>
 			<key>hash2</key>
 			<data>
-			pf0L/tJWKBsAZiDP14iR+NdN+iIroQ8Yjd6zm6cZuL0=
+			Y8tUVyBgpMOaE0iJU0eFhEpy6OWsF7ayAdjvjgLqWxI=
 			</data>
 		</dict>
 		<key>PlugIns/nejatTests.xctest/Info.plist</key>
@@ -1028,11 +1028,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			i3+rdhLZWw1pyWtJAo/B3flPhuY=
+			sWRQGNfO/BxMbMfDMCeB5xY5NPY=
 			</data>
 			<key>hash2</key>
 			<data>
-			Jvmc51wBEtn8tYnadbJSGAjhJ6Z2bNPVrtNwPyumfJU=
+			xAQcH3uDpS4PoBNs/r2eSC1wJCL6/jspIKdI4RR/qQA=
 			</data>
 		</dict>
 		<key>SimpleLineIcons.ttf</key>
