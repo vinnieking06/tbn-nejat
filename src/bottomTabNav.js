@@ -10,13 +10,13 @@ import Icon from 'react-native-vector-icons/FontAwesome.js';
 
  const Tabs = TabNavigator({
   About: {
-    screen: About, navigationOptions: {tabBarLabel: 'About Us',tabBarIcon: () => (<Icon name="info-circle" size={30} color="white" />)}
+    screen: About, navigationOptions: { tabBarLabel: 'About Us',tabBarIcon: () => (<Icon name="info-circle" size={30} color="white" />)}
   },
   Donate: {
     screen: Donate, navigationOptions: { title: 'Donate', tabBarIcon: () => (<Icon name="heart" size={30} color="white" />)}
   },
   Watch: {
-    screen: Watch, navigationOptions: {tabBarIcon: () => (<Icon name="youtube-play" size={30} color="white" />)}
+    screen: Watch, navigationOptions: { tabBarIcon: () => (<Icon name="youtube-play" size={30} color="white" />)}
   },
   Youtube: {
     screen: Youtube, navigationOptions: { tabBarIcon: () => (<Icon name="youtube" size={30} color="white" />)}

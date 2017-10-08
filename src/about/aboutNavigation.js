@@ -9,15 +9,15 @@ import HomeScreen from './About';
 import Icon from 'react-native-vector-icons/FontAwesome.js';
 
 const AboutRouter = StackNavigator({
-  Home: { screen: HomeScreen},
+  Home: { screen: HomeScreen },
   Broadcaster: { screen: BroadcasterContainer },
   Testimonies: {screen: TestimoniesContainer},
-  Satellite: {screen: Satellite},
-  Founder: {screen: Founder},
-  BroadcasterInfo: {screen: BroadcasterInfo},
-  TestimonyInfo: {screen: TestimonyInfo}
-},{headerMode: 'screen', navigationOptions: {
-    headerTintColor: 'black', headerBackTitle: null, headerStyle: { borderBottomWidth: 0}
+  Satellite: { screen: Satellite },
+  Founder: { screen: Founder },
+  BroadcasterInfo: { screen: BroadcasterInfo },
+  TestimonyInfo: { screen: TestimonyInfo }
+},{ headerMode: 'screen', navigationOptions: {
+    headerTintColor: 'black', headerBackTitle: null, headerStyle: { borderBottomWidth: 0 }
 }});
 
 export default AboutRouter
