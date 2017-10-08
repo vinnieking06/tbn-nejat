@@ -15,7 +15,7 @@ class Watch extends React.Component {
             <View style={styles.container}>
                  <TouchableOpacity style={styles.button}>
                    <View>
-                        <Text style={styles.textBig}>Watch Now</Text>
+                        <Text style={styles.textBig}>Watch Now </Text>
                         <Text style={styles.textSmall}>Click here</Text>
                     </View>
                     <Icon style={styles.icon} name="arrow-circle-right" size={15} color='white' />
