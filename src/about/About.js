@@ -45,8 +45,7 @@ const BroadcasterButton = (props) => {
   return (
     <TouchableOpacity style={{flex:props.flex}} onPress={() => props.changePage(props.page)}>
       <Image style = {styles.button} source={{uri: props.image}}>
-        <Text style={{ textDecorationLine: 'underline', color: 'white', marginBottom: 120 }}>ABOUT US</Text>
-        <Text style={{marginBottom: 30, color: 'white'}}>{props.page}</Text>
+        <Text style={{marginBottom: 30, color: 'white', fontSize: 22}}>{props.page}</Text>
       </Image>
   </TouchableOpacity>
   )
@@ -69,7 +68,8 @@ const styles = StyleSheet.create({
   },
   text: {
     marginLeft: 10,
-    color: 'white'
+    color: 'white',
+    fontSize: 22
   }
 })
 
