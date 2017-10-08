@@ -16,21 +16,17 @@ export class Program extends React.Component {
   render(){
     const props = this.props;
       return (
-        <View style={styles.itemContainer}>
+        <TouchableOpacity style={styles.itemContainer} onPress={()=>{props.toggleProgram(props.program.index)}}>
           <View style={styles.item} >
           <View>
             <Image style={{flex: 1, width: 50, borderRadius: 25}} source={{uri: props.imageUrl}} />
           </View> 
           {props.programInfo}
-            <TouchableOpacity onPress={()=>{props.toggleProgram(props.program.index)}}>
-              <Icon name="chevron-down" size={15} color='blue' />
-            </TouchableOpacity>
-
+            <Icon name="chevron-down" size={15} color='blue' />
           </View>
             {this.open(props.program.open, props.program)}
-        </View>
+        </TouchableOpacity>
       )
-
   }
 }
 
