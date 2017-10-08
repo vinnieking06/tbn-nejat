@@ -27,7 +27,7 @@ import Icon from 'react-native-vector-icons/FontAwesome.js';
   }, {
     tabBarOptions: {
       style: {
-        backgroundColor: '#000080'
+        backgroundColor: 'rgb(43, 62, 84)'
       }
     },
     initialRouteName: 'Watch'
