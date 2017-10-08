@@ -83,7 +83,8 @@ class Youtube extends React.Component {
 class Mideo extends React.Component {
 
   static navigationOptions = {
-    header:null
+    header:null,
+    tabBarVisible: false
   }
 
   stop(){
