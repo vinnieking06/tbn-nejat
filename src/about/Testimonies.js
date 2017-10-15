@@ -15,6 +15,10 @@ export class TestimoniesContainer extends React.Component {
     this.toggleProgram = this.toggleProgram.bind(this);
   };
 
+  componentWillUnmount(){
+    this.props.navigation.state.params.onClose()
+  }
+
   toggleProgram(index){
     let newState = this.state.testimonies;
     newState.forEach((item)=>{
