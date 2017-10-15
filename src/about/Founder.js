@@ -6,6 +6,11 @@ export default class Founder extends React.Component {
   static navigationOptions = {
     title: 'Founder Info',
   };
+
+  componentWillUnmount(){
+   this.props.navigation.state.params.onClose()
+  }
+
   render() {
     return (
     <View style={styles.container}>

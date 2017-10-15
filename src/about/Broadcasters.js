@@ -36,6 +36,10 @@ export class BroadcasterContainer extends React.Component {
     this.setState({programs: Data})
   }
   
+  componentWillUnmount(){
+   this.props.navigation.state.params.onClose()
+  }
+
   render() {
     return (
       <ScrollView ContentContainerStyle={styles.container}>

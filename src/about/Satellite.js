@@ -11,6 +11,11 @@ export default class SatelliteContainer extends React.Component {
     super(props);
     this.state = {countries: []}
   };
+
+  componentWillUnmount(){
+   this.props.navigation.state.params.onClose()
+  }
+
   componentDidMount() {
     this.setState({countries: Data});
   }

@@ -10,12 +10,23 @@ export default class HomeScreen extends React.Component {
 
   constructor(props){
     super(props);
-    this.changePage = this.changePage.bind(this);
+    this.state = {
+		disabled: false,
+	};
+
+   	this.changePage = this.changePage.bind(this);
   }
 
   changePage(page) {
-    const { navigate } = this.props.navigation;
-    navigate(page);
+  	if (!this.state.disabled) {
+  		this.setState({disabled: true});
+
+		this.props.navigation.navigate(page,{
+   			onClose : ()=>{
+      			this.setState({disabled: false});
+  		 }
+		});
+  	}
   }
 
   render() {
