@@ -44,7 +44,19 @@ export class BroadcasterContainer extends React.Component {
     return (
       <ScrollView ContentContainerStyle={styles.container}>
         {this.state.programs.map((program, index)=>{
-          return < Program OpenProgramInfo={<OpenProgramInfo program={program} />} navdestination={"BroadcasterInfo"} navInfo={program.info} imageUrl={"https://www.rezasafa.com//assets/img/founder-reza-safa.jpg"} programInfo={<ProgramInfo program={program} />} navigation={this.props.navigation} toggleProgram={this.toggleProgram} open={program.open} key={index} program={program} />
+          return (
+            <Program
+              OpenProgramInfo={ <OpenProgramInfo program={program} /> }
+              navdestination={"BroadcasterInfo"}
+              navInfo={program.info} imageUrl={"https://www.rezasafa.com//assets/img/founder-reza-safa.jpg"}
+              programInfo={<ProgramInfo program={program} />}
+              navigation={this.props.navigation}
+              toggleProgram={this.toggleProgram}
+              open={program.open}
+              key={index}
+              program={program}
+            />
+          )
         })}
       </ScrollView>
     );
